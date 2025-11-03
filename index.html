@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manhattan-Projekt — mein Mini-Referat</title>
+  <style>
+    :root {
+      --bg: #0f1220;
+      --card: #171a2b;
+      --text: #e8ecf1;
+      --muted: #b6c2cf;
+      --accent: #7c5cff;
+      --accent-2: #00e0a4;
+      --warn: #ffb347;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; }
+    body {
+      background: radial-gradient(1200px 600px at 10% -10%, rgba(124,92,255,.25), transparent 60%),
+                  radial-gradient(1000px 500px at 110% 10%, rgba(0,224,164,.2), transparent 55%),
+                  var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 28px 16px 12px;
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(8px);
+      background: linear-gradient(to bottom, rgba(15,18,32,0.85), rgba(15,18,32,0.35) 70%, transparent);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      z-index: 50;
+    }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 0 10px; }
+    .title {
+      display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    }
+    .title h1 {
+      margin: 0; font-size: 28px; letter-spacing: .3px;
+    }
+    .chip {
+      font-size: 12px; padding: 6px 10px; border-radius: 999px; color: #0e1320;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      font-weight: 700; text-transform: uppercase; letter-spacing: .8px;
+    }
+    nav { margin-top: 10px; display: flex; gap: 10px; flex-wrap: wrap; }
+    nav a {
+      color: var(--muted); text-decoration: none; padding: 8px 12px; border-radius: 10px;
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    nav a:hover { color: var(--text); border-color: rgba(255,255,255,.16); }
+
+    main { padding: 24px 16px 80px; }
+    section { margin: 22px 0; }
+    .card {
+      background: var(--card); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px; padding: 18px; box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    }
+    h2 { margin: 0 0 10px 0; font-size: 22px; }
+    p { margin: 8px 0; }
+    ul { margin: 8px 0 0 20px; }
+    li { margin: 6px 0; }
+    .grid { display: grid; gap: 14px; }
+    @media (min-width: 720px) { .grid { grid-template-columns: 1fr 1fr; } }
+
+    .tag { display: inline-block; padding: 4px 8px; border-radius: 8px; background: rgba(255,255,255,.06); color: var(--muted); margin-right: 6px; }
+
+    .timeline { width: 100%; border-collapse: collapse; }
+    .timeline th, .timeline td { border-bottom: 1px solid rgba(255,255,255,.08); padding: 10px; text-align: left; }
+    .timeline tr:hover { background: rgba(255,255,255,.03); }
+
+    .note { font-size: 14px; color: var(--muted); }
+
+    footer { color: var(--muted); text-align: center; padding: 30px 16px; }
+
+    .topBtn {
+      position: fixed; right: 16px; bottom: 16px; border: 1px solid rgba(255,255,255,.1);
+      background: var(--card); color: var(--text); border-radius: 10px; padding: 10px 12px; cursor: pointer;
+      box-shadow: 0 8px 24px rgba(0,0,0,.35); display: none;
+    }
+    .topBtn.show { display: inline-block; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="title">
+        <h1>Manhattan‑Projekt</h1>
+      </div>
+      <nav>
+        <a href="#intro">Einführung</a>
+        <a href="#orte">Hauptorte</a>
+        <a href="#kosten">Kosten</a>
+        <a href="#leitung">Leitung</a>
+        <a href="#forschung">Forschung</a>
+        <a href="#experimente">Experimente</a>
+        <a href="#folgen">Folgen</a>
+        <a href="#zeit">Zeitlinie</a>
+        <a href="#quellen">Quellen</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="intro" class="card">
+      <h2>Einführung</h2>
+      <p>Unter dem Codenamen <b>„Manhattan Project“</b> entwickelten von <b>1942–1945</b> über <b>150.000</b> Menschen in den USA die ersten Atombomben. Es war eines der größten Forschungsprojekte überhaupt – streng geheim und mitten im Zweiten Weltkrieg.</p>
+    </section>
+
+    <section class="grid">
+      <div id="orte" class="card">
+        <h2>Hauptorte</h2>
+        <ul>
+          <li><b>Los Alamos (New Mexico)</b>: Entwicklung und Bau der Bomben</li>
+          <li><b>Oak Ridge (Tennessee)</b>: Anreicherung von Uran</li>
+          <li><b>Hanford (Washington)</b>: Produktion von Plutonium</li>
+          <li>Weitere: Ames, MIT, Chicago, Dayton, Alamogordo</li>
+        </ul>
+      </div>
+      <div id="kosten" class="card">
+        <h2>Kosten</h2>
+        <p>Bis Ende 1945 ca. <b>1,9 Mrd. US‑$</b> (heute über <b>25 Mrd. US‑$</b>).</p>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div id="leitung" class="card">
+        <h2>Leitung</h2>
+        <ul>
+          <li><b>Militär:</b> General Leslie R. Groves</li>
+          <li><b>Wissenschaft:</b> J. Robert Oppenheimer</li>
+        </ul>
+      </div>
+      <div id="forschung" class="card">
+        <h2>Entwicklung & Forschung</h2>
+        <ul>
+          <li>Idee: militärische Nutzung der Kernspaltung</li>
+          <li>Am Anfang war <b>Deutschland</b> das Ziel, nicht Japan</li>
+          <li>Mehrere Wege gleichzeitig: Gasdiffusion, elektromagnetische Trennung, Reaktorversuche</li>
+          <li>Großes Problem: genug <b>Uran‑235</b> und <b>Plutonium‑239</b> herstellen</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div id="experimente" class="card">
+        <h2>Wichtige Experimente</h2>
+        <ul>
+          <li><b>2. Dez. 1942:</b> erste kontrollierte Kettenreaktion (Chicago Pile‑1, Enrico Fermi)</li>
+          <li><b>16. Juli 1945:</b> erster Atombombentest „Trinity“ (New Mexico) – ca. 20 kt TNT, der Stahlturm verdampfte</li>
+        </ul>
+      </div>
+      <div id="folgen" class="card">
+        <h2>Ergebnisse & Folgen</h2>
+        <p><b>„Little Boy“</b> (Uran) und <b>„Fat Man“</b> (Plutonium) wurden im August 1945 über <b>Hiroshima</b> und <b>Nagasaki</b> abgeworfen.</p>
+        <p>Über <b>200.000</b> Tote direkt oder durch Spätfolgen. Das Projekt beschleunigte das Kriegsende, startete aber das <b>nukleare Zeitalter</b> und trug zum <b>Kalten Krieg</b> bei.</p>
+      </div>
+    </section>
+
+    <section id="zeit" class="card">
+      <h2>Zeitlinie (kurz)</h2>
+      <table class="timeline">
+        <thead>
+          <tr><th>Jahr</th><th>Ereignis</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1939</td><td>Erste Überlegungen zur Nutzung der Kernenergie</td></tr>
+          <tr><td>1941</td><td>Angriff auf Pearl Harbor → USA treten in den Krieg ein</td></tr>
+          <tr><td>1942</td><td>Start des Manhattan‑Projekts</td></tr>
+          <tr><td>1942 (Dez.)</td><td>Erste kontrollierte Kettenreaktion in Chicago</td></tr>
+          <tr><td>1944</td><td>Projekt erhält höchste Priorität</td></tr>
+          <tr><td>1945 (Juli)</td><td>Trinity‑Test</td></tr>
+          <tr><td>1945 (Aug.)</td><td>Hiroshima & Nagasaki</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Bilder</h2>
+      <div class="grid">
+        <figure>
+          <img src="https://tse2.mm.bing.net/th/id/OIP.iaZYSt8Z1pnsi7oubvXJ8QHaEX?pid=Api&P=0&h=180" alt="Trinity-Test Explosion in New Mexico" loading="lazy" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08)">
+          <figcaption class="note">Trinity-Test, 16. Juli 1945 — Quelle: <a href="https://tse2.mm.bing.net/th/id/OIP.iaZYSt8Z1pnsi7oubvXJ8QHaEX?pid=Api&P=0&h=180" target="_blank" rel="noopener noreferrer">Bildlink</a></figcaption>
+        </figure>
+        <figure>
+          <img src="https://www.nps.gov/articles/000/images/Y-12-panorama-cover-photo.jpg" alt="Oak Ridge Anlage zur Uran-Anreicherung" loading="lazy" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08)">
+          <figcaption class="note">Oak Ridge, Tennessee – Y‑12 Calutron — Quelle: <a href="https://www.nps.gov/articles/000/images/Y-12-panorama-cover-photo.jpg" target="_blank" rel="noopener noreferrer">National Park Service</a></figcaption>
+        </figure>
+        <figure>
+          <img src="https://tse3.mm.bing.net/th/id/OIP.Bb64W75-t9M7CUFwre_gjAHaE8?pid=Api&P=0&h=180" alt="J. Robert Oppenheimer Porträt 1944" loading="lazy" style="width:100%;border-radius:10px;border:1px solid rgba(255,255,255,.08)">
+          <figcaption class="note">J. Robert Oppenheimer (1944) — Quelle: <a href="https://tse3.mm.bing.net/th/id/OIP.Bb64W75-t9M7CUFwre_gjAHaE8?pid=Api&P=0&h=180" target="_blank" rel="noopener noreferrer">Bildlink</a></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="quellen" class="card">
+      <h2>Quellen</h2>
+      <ul>
+        <li><a href="https://de.wikipedia.org/wiki/Manhattan-Projekt" target="_blank" rel="noopener noreferrer">Wikipedia: Manhattan‑Projekt</a></li>
+        <li><a href="https://www.atomwaffena-z.info/glossar/begriff/manhattan-projekt" target="_blank" rel="noopener noreferrer">Atomwaffen A–Z: Manhattan‑Projekt</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <button id="toTop" class="topBtn" aria-label="Nach oben">Nach oben</button>
+
+  
+
+  <script>
+    // winziges JS: Scroll-zu-oben Button & aktiver Menülink
+    const btn = document.getElementById('toTop');
+    const anchors = document.querySelectorAll('nav a');
+
+    function onScroll() {
+      if (window.scrollY > 240) btn.classList.add('show');
+      else btn.classList.remove('show');
+
+      let current = '';
+      document.querySelectorAll('main section[id]').forEach(sec => {
+        const top = sec.offsetTop - 120;
+        if (scrollY >= top) current = sec.id;
+      });
+      anchors.forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + current ? '#ffffff' : '';
+      });
+    }
+    window.addEventListener('scroll', onScroll);
+    onScroll();
+
+    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // nette kleine Animation beim Laden
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.card').forEach((el, i) => {
+        el.animate([
+          { transform: 'translateY(8px)', opacity: 0 },
+          { transform: 'translateY(0)', opacity: 1 }
+        ], { duration: 380, delay: i * 40, easing: 'cubic-bezier(.2,.8,.2,1)', fill: 'both' });
+      });
+    });
+  </script>
+</body>
+</html>
